@@ -1,0 +1,82 @@
+.sign-in{
+    width: 384px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 6px;
+    background-color: white;
+    align-items: center;
+    box-shadow: 0px 22px 106px rgba(0, 0, 0, 0.07), 0px 9.19107px 44.2843px rgba(0, 0, 0, 0.0503198), 0px 4.91399px 23.6765px rgba(0, 0, 0, 0.0417275), 0px 2.75474px 13.2728px rgba(0, 0, 0, 0.035), 0px 1.46302px 7.04911px rgba(0, 0, 0, 0.0282725), 0px 0.608796px 2.93329px rgba(0, 0, 0, 0.0196802);
+   
+   
+    &__title{
+        font-size: 20px;
+        position: relative;
+     
+    }
+
+    &__form-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+
+    
+    }
+
+    &__form{
+     font-size: 14px;
+     padding-top: 10px;
+     margin-left: 20px;
+    }
+
+    &__input{
+      margin-bottom: 30px;
+        height: 25px;
+        border-radius: 6px;
+        border: 1px solid rgb(211, 210, 210);
+        width: 340px;
+    }
+
+    &__error{
+        color:red;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 30px;
+        font-size: 12px
+    }
+
+    &__to-sign-up{
+        color:rgba(0, 0, 0, 0.579);
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    &__link-to-sign-up{
+        text-decoration: none;
+    }
+
+}
+
+.btn-on-submit{
+    background-color:  #1890FF;
+    border: none;
+    width: 319px;
+    height: 40px;
+    border-radius: 4px;
+    margin-left: 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 15px;
+}
+
+.link-on-submit{
+    padding: 20px 30px;
+    color: white;
+    text-decoration: none;
+}

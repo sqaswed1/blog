@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Inter-Light';
+    src: url(./Inter-Light.ttf);
+}
+
+*{
+    font-family: 'Inter-Light'
+}
+
+body {
+    background-color: #EBEEF3;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+}
+

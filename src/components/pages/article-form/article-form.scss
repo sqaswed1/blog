@@ -1,0 +1,95 @@
+.create-article{ 
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+   
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 22px 106px rgba(0, 0, 0, 0.07), 0px 9.19107px 44.2843px rgba(0, 0, 0, 0.0503198), 0px 4.91399px 23.6765px rgba(0, 0, 0, 0.0417275), 0px 2.75474px 13.2728px rgba(0, 0, 0, 0.035), 0px 1.46302px 7.04911px rgba(0, 0, 0, 0.0282725), 0px 0.608796px 2.93329px rgba(0, 0, 0, 0.0196802);
+
+    &__form-wrapper {
+        width: 938px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+    &__title{
+        font-size: 20px;
+
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+
+    }
+&__tagList{
+    list-style-type: none;
+    padding: 0;
+    width: 400px;
+}
+
+&__error{
+    color:red;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 30px;
+    font-size: 12px
+}
+
+    &__input{
+        margin-bottom: 30px;
+        height: 35px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: 1px solid rgb(211, 210, 210);
+        width: 840px;
+
+        &-body{
+       padding-bottom: 150px;
+       margin-bottom: 50px;
+        }
+        &-tag{
+            padding: 0;
+            border-radius: 6px;
+             border: 1px solid rgb(211, 210, 210);
+            height: 25px;
+            width: 300px;
+            margin: 10px 0;
+        }
+
+    }
+
+    &__btn-add-tag{
+       width: 80px;
+       height: 40px;
+        left: 400px;
+        bottom: 60px;
+        position: relative;
+        color: #1890FF;
+       background-color: white;
+       border: 1px solid #1890FF;
+       border-radius: 5px;
+       cursor: pointer;
+        font-size: 16px;
+    }
+
+    &__btn-delete-tag{ 
+        margin-left: 7px;
+        background-color: white;
+        font-weight: 200;
+        cursor: pointer;
+        width: 80px;
+        height: 40px;
+         font-size: 16px;
+         line-height: 24px;
+         padding: 5px 10px;
+        border-radius: 7px;
+        color: #ff3318;
+        border: 1px solid #ff3318;
+    }
+
+}

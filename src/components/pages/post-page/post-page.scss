@@ -1,0 +1,141 @@
+.post-page{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    width:870px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 118px;
+    display: flex;
+    justify-content: space-between;
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        max-width: 600px;
+        &-wrapper{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &-title{
+            font-size: 20px;
+            color: #1890FF;
+            margin: 10px;
+        }
+
+        &-description{
+            color:rgba(0, 0, 0, 0.25);
+             margin: 0;
+             word-break: break-word;
+             
+        }
+
+        &-body{
+            margin: 0;
+            margin-top: 20px;
+            width: 600px;
+              word-break: break-word;
+        }
+    }
+    &__user-info{
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+        align-items: center;
+        
+
+        &-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
+            right: 60px
+        }
+    }
+
+    
+        &__creater-pic{
+            position: relative;
+            left: 50px;
+            bottom: 40px;
+            
+    }
+
+    &__creater{
+        padding-top: 30px;
+    }
+
+    &__createdTime{ 
+        color: rgba(0, 0, 0, 0.5);
+      
+    }
+
+    &__btn-delete-post{
+        border: 1px solid rgb(255, 45, 45);
+        color: rgb(255, 45, 45);
+       
+    }
+    &__btn-edit-post{
+        border: 1px solid rgb(135, 233, 135);
+        color: rgb(135, 233, 135);
+       
+    }
+
+    &__modal-on-delete{
+        display: flex;
+        background-color: white;
+        position: absolute;
+        width: 240px;
+        padding: 5px;
+        height: 104px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        top: 200px;
+        z-index: 1;
+        right: 47px;
+    }
+
+    &__modal-button-wrapper{
+     display: flex;
+    }
+
+
+ .btn{
+background-color:white;
+padding: 10px 20px;
+border-radius: 6px;
+margin: 20px 3px;
+position: relative;
+bottom: 40px;
+cursor: pointer;
+ }
+
+ .btn-on-agree{ 
+    background-color: #1890FF;
+border: 1px solid #1890FF;
+line-height: 2px;
+color: white;
+font-weight: 100;
+height: 30px;
+border-radius: 6px;
+margin: 70px 3px 1px 0;
+position: relative;
+
+cursor: pointer;
+ }
+
+ .btn-on-disagree{
+    background-color:white;
+    border: 1px solid rgba(0, 0, 0, 0.608);
+    line-height: 2px;
+    height: 30px;
+    border-radius: 6px;
+    margin: 70px 3px 1px 0;
+    position: relative;
+    
+    cursor: pointer;
+ }
+
+}

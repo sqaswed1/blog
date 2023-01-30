@@ -1,0 +1,77 @@
+.header{
+    width: 100%;
+    position: static;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: white;
+
+    &__title{
+        margin: 0 22px;
+        font-size: 14px;
+        line-height:28px;
+        text-decoration: none;
+        color: black;
+    }
+
+    &__btn-login-group{
+        margin: 22px;
+
+        .btn{
+            padding: 12px;
+            line-height: 13px;
+            font-size: 16px;
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        
+        &-sign-up{
+            border: 1px solid rgb(139, 229, 139);
+            color:  rgb(117, 223, 117);  
+        }
+
+        &-sign-in{
+            border: none
+        }
+        }
+    }
+
+   &__userinfo{
+    width: 350px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+   &-username{
+    color: black;
+    margin-right: 5px;
+    line-height: 10px;
+   }
+}
+
+
+.btn{
+    padding: 11px;
+    background-color: white;
+    line-height: 13px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;    
+}
+.btn-article-create{
+        border: 1px solid rgb(139, 229, 139);
+        color:  rgb(117, 223, 117);
+}
+
+.btn-log-out{
+    border: 1px solid rgb(58, 63, 58);
+    color:  rgb(69, 74, 69);
+}
+
+&__link-to-profile{
+    text-decoration: none;
+   }
+}

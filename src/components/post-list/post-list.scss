@@ -1,0 +1,16 @@
+.post-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+
+    &__spin{
+       margin-left: auto;
+       margin-right: auto;
+       display: block;
+    }
+
+    &__pagination{
+      align-self: center;
+    }
+}
