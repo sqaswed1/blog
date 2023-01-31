@@ -14,7 +14,6 @@ export default function SignInForm() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [loginUser, { data, isLoading, error }] = useLoginUserMutation()
-
   useEffect(() => {
     if (data) {
       const {token} = data.user
@@ -89,7 +88,10 @@ export default function SignInForm() {
             Login
           </button>
           {error?.data && (
-          <p className='sign-in__error'>Email or password is invalid</p>
+          <p className='sign-in__error' style={{
+            'top': '0',
+            'left': '90px',
+        }}>Email or password is invalid</p>
         )}
         </form>
       </div>
