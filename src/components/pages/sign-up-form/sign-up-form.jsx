@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ErrorMessage } from '@hookform/error-message';
 import { useRegisterUserMutation } from '../../../api';
@@ -14,6 +14,7 @@ export default function SignUpForm() {
 	const patternEmail =
 		/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 	const dispatch = useDispatch();
+	const navigate = useNavigate()
 	const {
 		register,
 		handleSubmit,
@@ -21,8 +22,8 @@ export default function SignUpForm() {
 		formState: { errors },
 	} = useForm();
 
-	const [registerUser, { data }] = useRegisterUserMutation();
-
+	const [registerUser, { data, isError }] = useRegisterUserMutation();
+	
 	useEffect(() => {
 		if (data) {
 			const {token} = data.user;
@@ -47,8 +48,15 @@ export default function SignUpForm() {
 	};
 
 	const onSubmit = ({ username, password, email }) => {
-		registerUser({ username, password, email });
+	registerUser({ username, password, email })
+		navigate('/posts')
 	};
+
+	if(isError){
+		return <p  className="sign-up__error">
+			error.data.errors.error.message
+		</p>
+	}
 
 	return (
 		<div className="sign-up">
@@ -62,13 +70,9 @@ export default function SignUpForm() {
 						placeholder="Username"
 						{...register('username', validate(true))}
 					/>
-					<ErrorMessage
-						errors={errors}
-						name="username"
-						render={(message) => (
-							<p className="sign-in__error">{message.message}</p>
-						)}
-					/>
+					{errors?.username && (
+          				<p className='sign-up__error'>{errors.username.message}</p>
+        					)}
 					Email address:
 					<input
 						autoComplete="on"
@@ -76,13 +80,9 @@ export default function SignUpForm() {
 						placeholder="E-mail"
 						{...register('email', validate(true, patternEmail))}
 					/>
-					<ErrorMessage
-						errors={errors}
-						name="email"
-						render={(message) => (
-							<p className="sign-up__error">{message.message}</p>
-						)}
-					/>
+				{errors?.email && (
+          		<p className='sign-up__error'>{errors.email.message}</p>
+        		)}
 					Password:
 					<input
 						autoComplete="on"
@@ -95,13 +95,9 @@ export default function SignUpForm() {
 							minLength: 6,
 						})}
 					/>
-					<ErrorMessage
-						errors={errors}
-						name="password"
-						render={(message) => (
-							<p className="sign-up__error">{message.message}</p>
-						)}
-					/>
+					{errors?.password && (
+          		<p className='sign-up__error'>{errors.password.message}</p>
+        		)}
 					Repeat password:
 					<input
 						type="password"
@@ -117,13 +113,9 @@ export default function SignUpForm() {
 							},
 						})}
 					/>
-					<ErrorMessage
-						errors={errors}
-						name="confirm_password"
-						render={(message) => (
-							<p className="sign-up__error">{message.message}</p>
-						)}
-					/>
+						{errors?.confirm_password && (
+          		<p className='sign-up__error'>{errors.confirm_password.message}</p>
+        		)}
 					<label htmlFor="agree_form" className="sign-up__agree-form">
 						<input
 							type="checkbox"
@@ -150,6 +142,9 @@ export default function SignUpForm() {
 							</p>
 						)}
 					/>
+					{errors?.data && (
+          <p className='sign-up__error'>{errors.data.message}</p>
+        )}
 					<button className="btn-on-submit" type="submit">
 						Sign Up
 					</button>

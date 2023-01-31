@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import "./sign-in-form.scss"
 import React, { useEffect } from "react"
-import { ErrorMessage } from "@hookform/error-message"
+
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
@@ -13,7 +13,7 @@ import { useLoginUserMutation } from "../../../api"
 export default function SignInForm() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const [loginUser, { data, isLoading }] = useLoginUserMutation()
+  const [loginUser, { data, isLoading, error }] = useLoginUserMutation()
 
   useEffect(() => {
     if (data) {
@@ -56,7 +56,7 @@ export default function SignInForm() {
     navigate("/posts")
   }
 
-  const onSubmit = ({ email, password }) => {
+  const onSubmit = ({ email, password}) => {
     loginUser({ email, password })
   }
   return (
@@ -71,13 +71,9 @@ export default function SignInForm() {
             className='sign-in__input'
             {...register("email", validate(true, patternEmail))}
           />
-          <ErrorMessage
-            errors={errors}
-            name='email'
-            render={(message) => (
-              <p className='sign-in__error'>{message.message}</p>
-            )}
-          />
+          {errors?.email && (
+          <p className='sign-in__error'>{errors.email.message}</p>
+        )}
           Password:
           <input
             autoComplete='on'
@@ -86,31 +82,15 @@ export default function SignInForm() {
             className='sign-in__input'
             {...register("password", validate(true))}
           />
-          <ErrorMessage
-            errors={errors}
-            name='password'
-            render={(message) => (
-              <p className='sign-in__error'>{message.message}</p>
-            )}
-          />
+          {errors?.password && (
+          <p className='sign-in__error'>{errors.password.message}</p>
+        )}
           <button className='btn-on-submit' type='submit'>
             Login
           </button>
-          <ErrorMessage
-            errors={errors}
-            name='data'
-            render={() => (
-              <p
-                className='sign-in__error'
-                style={{
-                  left: "90px",
-                  bottom: "10px",
-                }}
-              >
-                Email or password is invalid
-              </p>
-            )}
-          />
+          {error?.data && (
+          <p className='sign-in__error'>Email or password is invalid</p>
+        )}
         </form>
       </div>
       <p className='sign-in__to-sign-up'>

@@ -28,10 +28,10 @@ export const baseApi = createApi({
 			providesTags: () => ['onePost', 'Posts'],
 		}),
 		registerUser: build.mutation({
-			query: (userInfo) => ({
+			query: ({ email, password, username }) => ({
 				url: '/users',
 				method: 'POST',
-				body: { user: userInfo },
+				body: { user: { email, password, username } },
 			}),
 		}),
 		loginUser: build.mutation({
@@ -48,7 +48,7 @@ export const baseApi = createApi({
 					Authorization: `Token ${token}`,
 				},
 			}),
-			providesTags: () => ['User'],
+
 			invalidatesTags: ['User'],
 		}),
 		updateUser: build.mutation({
