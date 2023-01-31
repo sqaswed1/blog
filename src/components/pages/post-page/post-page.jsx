@@ -116,7 +116,7 @@ export default function PostPage() {
 						className="post-page__creater-pic"
 						icon={<UserOutlined />}
 					/>
-					{username === loggedData.user.username ? (
+					{username === loggedData?.user?.username ? (
 						<div className="post-page__button-wrapper">
 							<button type='button'
 								className="post-page__btn-delete-post btn"
