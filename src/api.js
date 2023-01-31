@@ -48,7 +48,7 @@ export const baseApi = createApi({
 					Authorization: `Token ${token}`,
 				},
 			}),
-
+			providesTags: () => ['User'],
 			invalidatesTags: ['User'],
 		}),
 		updateUser: build.mutation({
@@ -61,6 +61,7 @@ export const baseApi = createApi({
 				},
 				body: { user: dataInfo },
 			}),
+			providesTags: () => ['User'],
 			invalidatesTags: ['User'],
 		}),
 		createArticle: build.mutation({
@@ -123,3 +124,4 @@ export const {
 	useSetFavoritedMutation,
 	useDeleteArticleMutation,
 } = baseApi;
+
