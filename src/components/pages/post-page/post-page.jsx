@@ -95,7 +95,7 @@ export default function PostPage() {
 						}
 					</span>
 					<p className="post-page__info-description">
-						<ReactMarkdown><p>{description}</p></ReactMarkdown>
+						<ReactMarkdown>{description}</ReactMarkdown>
 					</p>
 					<p className="post-page__info-body">
 						<ReactMarkdown>{body}</ReactMarkdown>
@@ -116,7 +116,7 @@ export default function PostPage() {
 						className="post-page__creater-pic"
 						icon={<UserOutlined />}
 					/>
-					{username === loggedData?.user?.username ? (
+					{username === loggedData.user.username ? (
 						<div className="post-page__button-wrapper">
 							<button type='button'
 								className="post-page__btn-delete-post btn"
